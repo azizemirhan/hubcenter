@@ -41,7 +41,7 @@ apt install docker-compose-plugin -y
 
 # Servis kontrolü
 systemctl enable docker
-systemctl start docker
+   systemctl start docker
 
 # Versiyon kontrolü
 docker --version
@@ -69,8 +69,8 @@ cd hubcenter
 ## 3️⃣ Environment Dosyası Oluşturma
 
 ```bash
-cd docker
-nano .env
+   cd docker
+   nano .env
 ```
 
 **.env içeriği:**
@@ -93,7 +93,7 @@ NEXT_PUBLIC_API_URL=https://hubcenter.nextmedya.com/api/v1
 ## 4️⃣ İlk Çalıştırma
 
 ```bash
-cd /root/hubcenter/docker
+   cd /root/hubcenter/docker
 
 # Build ve başlat
 docker compose -f docker-compose.prod.yml up -d --build
