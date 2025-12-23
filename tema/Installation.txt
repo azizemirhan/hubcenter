@@ -1,0 +1,89 @@
+Please Follow below URL for detail online documentation
+https://next-nubra-ui.vercel.app/
+
+File Structure
+
+Next-Jampack
+│
+├── Clssic
+├── Compact
+└── Horizontal
+    │
+    ├── public
+    ├── src
+    │	│
+    │	├── app
+    │	│   │
+    │	│   ├── (app layout)
+    │	│   │   ├── layout.jsx      /*layout for app pages*/
+    │	│   │   └── All app pages (jsx) here
+    │	│   │
+    │	│   └── (auth layout)
+    │	│	├── layout.jsx      /*layout for auth pages*/
+    │	│	└── All authentication pages (jsx) here
+    │	│
+    │	├── assets
+    │	│   └── dist
+    │	│	└── img
+    │	│
+    │	├── components
+    │	│   └── All Custom Components
+    │	│
+    │	├── context      /*Global state management like redux*/
+    │	│   ├── reducer
+    │	│   └── globalStateProvider.js
+    │	│
+    │	├── data
+    │	│   └── External data
+    │	│
+    │	├── layout
+    │	│   ├── app-layout
+    │	│   ├── auth-layout
+    │	│   ├── footer
+    │	│   ├── header
+    │	│   └── sidebar
+    │	│
+    │	└── styles
+    │	    ├── css
+    │	    ├── fonts
+    │	    └── scss
+    │		├── apps.scss
+    │		├── drawer.scss
+    │		├── footer.scss
+    │		├── header.scss
+    │		├── horizontal-menu.scss
+    │		├── mixins.scss
+    │		├── nav.scss
+    │		├── navbar-menu.scss
+    │		├── style.scss
+    │		├── variables.scss
+    │		├── vertical-classic-menu.scss
+    │		└── vertical-icon-menu.scss
+    │
+    ├── .eslintrc.json
+    ├── .gitignore
+    ├── jsconfig.json
+    ├── next.config.json
+    ├── package.json
+    └── README.md
+  
+Installation
+
+1. First of all it's required to Install Node.js 16.14 or later and npm / yarn.
+2. Open your favorite console application (Terminal, iTerm, Command Prompt etc.). Navigate to a your favorite project layout folder (classic, horizontal or compact) and Install packages using following commands. This command will install all the required Node.js modules into the node_modules directory inside project folder. And now, you are ready to run the project for the first time.
+
+npm install
+or 
+yarn install
+
+3. Now you can run this Next.js project by using following command for your application development, make the necessary changes.
+
+npm run dev
+or 
+yarn run dev
+
+4.To builds the app for production you can use next build command. next build creates an optimized production build of your application. The output displays information about each route.
+
+npm run build
+or 
+yarn build

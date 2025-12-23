@@ -1,0 +1,230 @@
+{
+  "timestamp": "2025-12-22T12:56:31.131005",
+  "siteground_sites": [
+    {
+      "domain": "tutkuhomes.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 12, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "eisgold.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 12, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "forjetec.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 8, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "vuvita.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 5, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "kazatazminatiniz.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 4, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "agabeygroup.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 3, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "moodmesse.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 2, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "astravoltrafo.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 27, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "mood-expo.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 24, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "eisgroup.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 23, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "zeyamuhendislik.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 22, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "emrullahkoroglu.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "udspergolacamsistemleri.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "rezonall.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "tanguldogalgazsihhitesisatcim.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "enyakinelektrikci724.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "devinyangin.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    }
+  ],
+  "website_data": [
+    {
+      "domain": "tutkuhomes.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": ""
+      },
+      "company_name": "Robot Challenge Screen",
+      "description": "",
+      "scraped": true,
+      "error": null
+    },
+    {
+      "domain": "eisgold.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": ""
+      },
+      "company_name": "403",
+      "description": "",
+      "scraped": true,
+      "error": null
+    },
+    {
+      "domain": "forjetec.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": ""
+      },
+      "company_name": "403",
+      "description": "",
+      "scraped": true,
+      "error": null
+    },
+    {
+      "domain": "vuvita.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": ""
+      },
+      "company_name": "403",
+      "description": "",
+      "scraped": true,
+      "error": null
+    },
+    {
+      "domain": "kazatazminatiniz.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": ""
+      },
+      "company_name": "403",
+      "description": "",
+      "scraped": true,
+      "error": null
+    }
+  ],
+  "crm_updates": [],
+  "errors": []
+}

@@ -1,0 +1,347 @@
+{
+  "timestamp": "2025-12-22T12:51:40.500958",
+  "siteground_sites": [
+    {
+      "domain": "tutkuhomes.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 12, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "eisgold.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 12, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "forjetec.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 8, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "vuvita.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 5, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "kazatazminatiniz.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 4, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "agabeygroup.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 3, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "moodmesse.com",
+      "plan": "Hosting Plan",
+      "site_created": "Dec 2, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "astravoltrafo.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 27, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "mood-expo.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 24, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "eisgroup.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 23, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "zeyamuhendislik.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 22, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "emrullahkoroglu.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "udspergolacamsistemleri.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "rezonall.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 21, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "tanguldogalgazsihhitesisatcim.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "enyakinelektrikci724.com",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": true,
+      "site_tools_url": ""
+    },
+    {
+      "domain": "devinyangin.com.tr",
+      "plan": "Hosting Plan",
+      "site_created": "Nov 20, 2025",
+      "status": "ACTIVE",
+      "has_wordpress": false,
+      "site_tools_url": ""
+    }
+  ],
+  "website_data": [
+    {
+      "domain": "tutkuhomes.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "eisgold.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "forjetec.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "vuvita.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "kazatazminatiniz.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "agabeygroup.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "moodmesse.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "astravoltrafo.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "mood-expo.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "eisgroup.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "zeyamuhendislik.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "emrullahkoroglu.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "udspergolacamsistemleri.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "rezonall.com",
+      "phones": [
+        "+905527878280",
+        "+905352311541",
+        "+903246060676",
+        "+902526060690"
+      ],
+      "emails": [
+        "info@rezonall.com",
+        "volkan.sinmez@rezonall.com",
+        "talip.arslan@rezonall.com"
+      ],
+      "address": "50.⁠ ⁠Yıl Mah. 20. Cad imoland konutları D Blok no:55 D içkapı no:3 Yenişehir Mersin / Türkiye.",
+      "social": {
+        "facebook": "https://www.facebook.com/profile.php?id=61583292076148",
+        "instagram": "https://www.instagram.com/rezon.all/",
+        "twitter": "",
+        "linkedin": "https://www.linkedin.com/feed/?trk=nav_logo",
+        "youtube": ""
+      },
+      "company_name": "Yapay Zeka Müşteri Hizmetleri Otomasyonu",
+      "description": "Otel, restoran ve acenteler için 7/24 yapay zeka destekli müşteri hizmetleri otomasyonu. Rezervasyon, sipariş ve bilgi taleplerini otomatik yönetin.",
+      "scraped": true,
+      "error": null
+    },
+    {
+      "domain": "tanguldogalgazsihhitesisatcim.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "enyakinelektrikci724.com",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    },
+    {
+      "domain": "devinyangin.com.tr",
+      "phones": [],
+      "emails": [],
+      "address": "",
+      "social": {},
+      "company_name": "",
+      "description": "",
+      "scraped": false,
+      "error": "HTTP 403"
+    }
+  ],
+  "crm_updates": [],
+  "errors": []
+}

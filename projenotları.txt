@@ -1,0 +1,2082 @@
+    Tabii, önce özellikleri netleştirelim. Bu çok doğru bir yaklaşım.
+
+Bir dijital ajans için CRM/ERP'de genellikle şu modüller oluyor:
+Temel Modüller
+
+Müşteri Yönetimi
+
+    Müşteri kartları (firma bilgileri, iletişim)
+    İletişim geçmişi
+    Notlar ve hatırlatıcılar
+
+Teklif/Teklif Yönetimi
+
+    Teklif oluşturma
+    Teklif şablonları
+    Onay/red takibi
+    PDF export
+
+Proje Yönetimi
+
+    Proje kartları
+    Görev atamaları
+    Süre takibi (time tracking)
+    Aşama/durum takibi
+
+Fatura/Finans
+
+    Fatura kesimi
+    Tahsilat takibi
+    Gelir/gider
+    Raporlar
+
+Ekip Yönetimi
+
+    Kullanıcılar ve roller
+    İş yükü dağılımı
+    Performans takibi
+
+Sizin ajansınızda bunlardan hangileri öncelikli? Veya bunların dışında spesifik ihtiyaçlarınız var mı?
+
+Mesela:
+
+    Domain/hosting takibi yapıyor musunuz?
+    Destek talepleri alıyor musunuz?
+    Müşteriye özel portal olacak mı?
+
+Öncelikleri belirleyelim, sonra detaylara girelim.
+
+domain hosting takibi
+müşteri talepleri alıyoruz
+müşterilerin şifre ve giriş bilgilerini tutuyoruz (Gmail, Site Giriş, Hosting Giriş)
+Müşteriler için oluşturduğumuz mail bilgilerini tutuyoruz (info@domain, portlar, şifreler gibi)
+
+müşterinin seo takibi için bir alan istiyorum Aylık, Haftalık ve Günlük olarak yapılacak ve sen ile ilgili detaylar girilebilecek
+
+burada WhatsApp ile bağlantı kurmak istiyorum whatsapp'dan yazan müşterilere hızlıca ai ile cevap oluşturabilmek istiyorum, ayrıca müşterilerimiz çok referans soruyorlar bunlara referanslarımızı hızlıca gönderebilmek istiyorum 
+
+böyle bir sistemi nasıl yaparız
+19 Ara
+
+Harika, çok net bir kapsam çıktı. Şimdi bunları modüller halinde organize edelim:
+Modül Yapısı
+
+┌─────────────────────────────────────────────────────────────────┐
+│                        CRM/ERP SİSTEMİ                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐ │
+│  │ MÜŞTERİ YÖNETİMİ │  │  DOMAIN/HOSTİNG  │  │  GÜVENLİ KASA │ │
+│  ├──────────────────┤  ├──────────────────┤  ├───────────────┤ │
+│  │ • Firma bilgileri│  │ • Domain listesi │  │ • Site girişi │ │
+│  │ • İletişim       │  │ • Yenileme tarih │  │ • Hosting     │ │
+│  │ • Notlar         │  │ • Hosting planı  │  │ • Gmail       │ │
+│  │ • Dökümanlar     │  │ • DNS kayıtları  │  │ • Mail hesap  │ │
+│  └──────────────────┘  └──────────────────┘  └───────────────┘ │
+│                                                                 │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐ │
+│  │   SEO TAKİBİ     │  │ WHATSAPP ENTEGRE │  │   REFERANS    │ │
+│  ├──────────────────┤  ├──────────────────┤  ├───────────────┤ │
+│  │ • Günlük görev   │  │ • Gelen mesajlar │  │ • Portfolyo   │ │
+│  │ • Haftalık görev │  │ • AI cevap öner  │  │ • Hızlı gönder│ │
+│  │ • Aylık görev    │  │ • Referans gönder│  │ • Kategoriler │ │
+│  │ • Raporlama      │  │ • Şablonlar      │  │ • Görseller   │ │
+│  └──────────────────┘  └──────────────────┘  └───────────────┘ │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+Detaylı Modül Açıklamaları
+1. Müşteri Yönetimi
+
+    Firma adı, yetkili kişi, telefon, email
+    Sektör, müşteri tipi (aktif, pasif, potansiyel)
+    İletişim geçmişi (arama, toplantı, email)
+    Dosya/döküman ekleme
+
+2. Domain & Hosting Takibi
+
+    Domain adı, kayıt tarihi, bitiş tarihi
+    Otomatik yenileme hatırlatıcısı (30, 15, 7 gün önce)
+    Hosting sağlayıcı, plan, bitiş tarihi
+    SSL sertifika takibi
+
+3. Güvenli Kasa (Şifre Yönetimi)
+
+    Şifreli saklama (AES-256 encryption)
+    Kategoriler: Site, Hosting, Gmail, Mail, Sosyal Medya
+    Mail hesapları: email, şifre, SMTP/IMAP portları
+    Kopyala butonu, şifre göster/gizle
+
+4. SEO Takip Modülü
+Periyot	Görev Örnekleri
+Günlük	Site hız kontrolü, index durumu, backlink check
+Haftalık	İçerik analizi, rakip analizi, keyword takibi
+Aylık	Detaylı rapor, strateji güncelleme, toplantı
+
+    Checklist sistemi (yapıldı/yapılmadı)
+    Not ekleme alanı
+    Tarih bazlı geçmiş görüntüleme
+
+5. WhatsApp Entegrasyonu
+
+┌─────────────────────────────────────────────┐
+│           WHATSAPP MODÜLÜ                   │
+├─────────────────────────────────────────────┤
+│                                             │
+│  Gelen Mesaj: "Merhaba, referans            │
+│  görebilir miyim?"                          │
+│                                             │
+│  ┌─────────────────────────────────────┐   │
+│  │  🤖 AI Öneri:                        │   │
+│  │  "Merhaba! Tabii ki, işte son       │   │
+│  │   projelerimizden bazıları..."      │   │
+│  │                                      │   │
+│  │  [Düzenle] [Gönder] [Referans Ekle] │   │
+│  └─────────────────────────────────────┘   │
+│                                             │
+│  Hızlı Aksiyonlar:                         │
+│  [📁 Referans Gönder] [💰 Fiyat Listesi]   │
+│  [📅 Toplantı Planla] [📝 Teklif Gönder]   │
+│                                             │
+└─────────────────────────────────────────────┘
+
+WhatsApp Teknik Altyapı:
+
+    WhatsApp Business API (resmi) veya
+    Baileys kütüphanesi (ücretsiz, unofficial)
+    Gelen mesajları webhook ile yakalama
+    AI cevap için OpenAI veya Claude API
+
+6. Referans/Portfolyo Modülü
+
+    Proje adı, müşteri, sektör
+    Görsel galeri
+    Proje linki
+    Kategorilere göre filtreleme
+    WhatsApp'a hızlı gönderim formatı
+
+Sorularım
+
+Devam etmeden önce birkaç şeyi netleştirelim:
+
+    WhatsApp: Tek numara mı kullanacaksınız yoksa birden fazla kişi mi cevap verecek?
+    Şifre kasası: Sadece siz mi göreceksiniz yoksa müşteri de kendi bilgilerine erişebilecek mi (müşteri portalı)?
+    SEO takibi: Kaç müşteri için aktif SEO yapıyorsunuz? (Ölçek için soruyorum)
+    Kullanıcılar: Sistemi kaç kişi kullanacak? Rol bazlı yetkilendirme gerekiyor mu? (Admin, SEO uzmanı, satış vs.)
+    Bildirimler: Domain bitmeden önce bildirim nasıl gelsin? Email, SMS, WhatsApp, sistem içi?
+
+Bunları netleştirince veritabanı yapısını ve API'leri tasarlamaya başlayabiliriz.
+
+1-) tek numara kullancağız 2-) sadece biz göreceğiz 3-) şuan için 5 adet müşteriyle çalışıyoruz 4-) rol bazlı yetkilendirme gerekmiyor 5-) Bildirim Yöntemi Mail ve WhatsApp Olsun
+19 Ara
+
+Mükemmel, artık kapsam çok net. Görece küçük ölçekli ama sağlam bir sistem olacak.
+Özet Kapsam
+Özellik	Detay
+Kullanıcı	Tek kullanıcı veya küçük ekip (rol yok)
+Müşteri	~5 aktif SEO müşterisi + diğerleri
+WhatsApp	Tek numara, AI destekli
+Şifre Kasası	Sadece internal erişim
+Bildirimler	Email + WhatsApp
+Veritabanı Şeması
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           VERİTABANI ŞEMASI                             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│    customers     │       │     domains      │       │    hostings      │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │───┐   │ id               │       │ id               │
+│ company_name     │   │   │ customer_id (FK) │───┐   │ customer_id (FK) │
+│ contact_person   │   │   │ domain_name      │   │   │ provider         │
+│ phone            │   │   │ registrar        │   │   │ plan_name        │
+│ email            │   │   │ register_date    │   │   │ server_ip        │
+│ address          │   │   │ expire_date      │   │   │ expire_date      │
+│ sector           │   │   │ auto_renew       │   │   │ username         │
+│ status           │   │   │ dns_provider     │   │   │ created_at       │
+│ notes            │   │   │ ssl_expire_date  │   │   └────────┬─────────┘
+│ created_at       │   │   │ created_at       │   │            │
+└──────────────────┘   │   └──────────────────┘   │            │
+                       │                          │            │
+                       │   ┌──────────────────────┴────────────┘
+                       │   │
+                       ▼   ▼
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│   credentials    │       │   mail_accounts  │       │   seo_tasks      │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ customer_id (FK) │       │ customer_id (FK) │       │ customer_id (FK) │
+│ type             │       │ email            │       │ period_type      │
+│ title            │       │ password (enc)   │       │ title            │
+│ url              │       │ smtp_server      │       │ description      │
+│ username         │       │ smtp_port        │       │ is_completed     │
+│ password (enc)   │       │ imap_server      │       │ completed_date   │
+│ notes            │       │ imap_port        │       │ due_date         │
+│ created_at       │       │ created_at       │       │ notes            │
+└──────────────────┘       └──────────────────┘       │ created_at       │
+                                                      └──────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│    references    │       │ whatsapp_messages│       │  notifications   │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ project_name     │       │ phone_number     │       │ type             │
+│ customer_name    │       │ customer_id (FK) │       │ title            │
+│ sector           │       │ message          │       │ message          │
+│ description      │       │ direction        │       │ related_type     │
+│ website_url      │       │ ai_suggestion    │       │ related_id       │
+│ images           │       │ is_answered      │       │ send_via         │
+│ technologies     │       │ created_at       │       │ sent_at          │
+│ is_active        │       └──────────────────┘       │ is_sent          │
+│ created_at       │                                  │ created_at       │
+└──────────────────┘                                  └──────────────────┘
+
+Credential Types (Şifre Kasası Tipleri)
+python
+
+CREDENTIAL_TYPES = [
+    ('site_admin', 'Site Yönetim Paneli'),
+    ('hosting', 'Hosting Girişi'),
+    ('gmail', 'Gmail/Google'),
+    ('ftp', 'FTP Bilgileri'),
+    ('cpanel', 'cPanel'),
+    ('social_media', 'Sosyal Medya'),
+    ('other', 'Diğer'),
+]
+
+SEO Task Period Types
+python
+
+SEO_PERIOD_TYPES = [
+    ('daily', 'Günlük'),
+    ('weekly', 'Haftalık'),
+    ('monthly', 'Aylık'),
+]
+```
+
+## API Endpoint Yapısı
+```
+/api/v1/
+│
+├── /auth/
+│   ├── POST   /login/
+│   ├── POST   /logout/
+│   └── GET    /me/
+│
+├── /customers/
+│   ├── GET    /                    # Liste
+│   ├── POST   /                    # Yeni müşteri
+│   ├── GET    /:id/                # Detay
+│   ├── PUT    /:id/                # Güncelle
+│   ├── DELETE /:id/                # Sil
+│   ├── GET    /:id/domains/        # Müşterinin domainleri
+│   ├── GET    /:id/credentials/    # Müşterinin şifreleri
+│   └── GET    /:id/seo-tasks/      # Müşterinin SEO görevleri
+│
+├── /domains/
+│   ├── GET    /                    # Liste
+│   ├── POST   /                    # Yeni domain
+│   ├── GET    /expiring/           # Yakında bitecekler
+│   └── ...
+│
+├── /hostings/
+│   └── ...
+│
+├── /credentials/
+│   ├── GET    /                    # Liste (şifreler masked)
+│   ├── POST   /                    # Yeni
+│   ├── GET    /:id/reveal/         # Şifreyi göster (log tutulur)
+│   └── ...
+│
+├── /mail-accounts/
+│   └── ...
+│
+├── /seo-tasks/
+│   ├── GET    /                    # Liste
+│   ├── GET    /today/              # Bugünkü görevler
+│   ├── GET    /weekly/             # Bu hafta
+│   ├── GET    /monthly/            # Bu ay
+│   ├── POST   /:id/complete/       # Görevi tamamla
+│   └── ...
+│
+├── /references/
+│   ├── GET    /                    # Liste
+│   ├── GET    /by-sector/:sector/  # Sektöre göre
+│   └── POST   /:id/send-whatsapp/  # WhatsApp'a gönder
+│
+├── /whatsapp/
+│   ├── GET    /messages/           # Mesaj listesi
+│   ├── POST   /webhook/            # Gelen mesaj webhook
+│   ├── POST   /send/               # Mesaj gönder
+│   └── POST   /ai-suggest/         # AI cevap önerisi al
+│
+└── /notifications/
+    ├── GET    /pending/            # Bekleyen bildirimler
+    └── POST   /send/               # Manuel bildirim gönder
+```
+
+## Bildirim Sistemi Akışı
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    BİLDİRİM SİSTEMİ                             │
+└─────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────┐
+    │ Celery Beat │  (Günlük çalışır)
+    │ Scheduler   │
+    └──────┬──────┘
+           │
+           ▼
+    ┌─────────────────────────────────────┐
+    │ Domain/Hosting/SSL Kontrol          │
+    │                                     │
+    │ • 30 gün kala → Bilgi              │
+    │ • 15 gün kala → Uyarı              │
+    │ • 7 gün kala  → Acil               │
+    │ • 3 gün kala  → Kritik             │
+    └──────┬──────────────────────────────┘
+           │
+           ▼
+    ┌─────────────────────────────────────┐
+    │ Notification Oluştur                │
+    └──────┬──────────────────────────────┘
+           │
+           ├────────────┐
+           ▼            ▼
+    ┌───────────┐ ┌───────────┐
+    │   Email   │ │ WhatsApp  │
+    │   Gönder  │ │   Gönder  │
+    └───────────┘ └───────────┘
+
+Şimdi Sorularım
+
+Veritabanı ve API yapısı bu şekilde uygun mu? Devam etmeden önce:
+
+    Eksik alan var mı? Müşteri kartında veya diğer modüllerde başka bilgiler tutuyor musunuz?
+    SEO görevleri: Hazır şablon görevler olsun mu? Mesela "Günlük yapılacaklar" diye standart bir liste tanımlayıp her müşteriye atansın mı?
+    WhatsApp: Sadece gelen mesajları mı göreceksiniz yoksa sistem üzerinden mesaj da göndermek istiyor musunuz?
+    Referans görselleri: Kaç adet görsel olabilir proje başına? Bunları nerede saklamak istersiniz? (Sunucuda mı, S3/Cloudflare R2 mi?)
+
+Bunları da netleştirince kodlamaya geçebiliriz.
+
+eksik özellikler var;
+
+burada firma içerisinde birbirimize görevler verebiliyoruz task yönetimi olacak, günlük, haftalık ve aylık olacak
+
+ek olarak faturalarımız, gelirlerimiz, giderlerimiz (aylık masraflarımız, yıllık masraflarımız olacak şekilde ay ay ayrılmış), burada nakit paramızı tutabileceğimiz, banka kartlarımızı tanımlayabileceğimiz bu kartlarla aylık hangi kartla nereye ödeme yapıyoruz ve hangi gün yapıyoruz yazabileceğimiz bir alan lazım (para yönetimi), potansiyel müşterilerimizi ekleyeceğimiz günlük haftalık olabilecek (görüşme aşamasında müşteriler) yazabilmemiz lazım
+19 Ara
+
+Mükemmel, şimdi tam kapsamlı bir sistem ortaya çıkıyor. Hepsini ekleyelim:
+Güncellenmiş Modül Yapısı
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           CRM/ERP SİSTEMİ                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
+│  │ MÜŞTERİ YÖNETİMİ│  │ POTANSİYEL MÜŞ. │  │ DOMAIN/HOSTİNG │         │
+│  │                 │  │                 │  │                 │         │
+│  │ Aktif müşteriler│  │ Lead takibi     │  │ Domain takip    │         │
+│  │ İletişim geçmiş │  │ Görüşme notları │  │ Hosting takip   │         │
+│  │ Dökümanlar      │  │ Hatırlatıcılar  │  │ SSL takip       │         │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
+│                                                                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
+│  │  GÜVENLİ KASA   │  │   SEO TAKİBİ    │  │  TASK YÖNETİMİ  │         │
+│  │                 │  │                 │  │                 │         │
+│  │ Site girişleri  │  │ Günlük görevler │  │ Ekip görevleri  │         │
+│  │ Hosting bilgi   │  │ Haftalık görev  │  │ Günlük/Haftalık │         │
+│  │ Mail hesapları  │  │ Aylık görevler  │  │ Aylık tasklar   │         │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
+│                                                                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
+│  │  PARA YÖNETİMİ  │  │ FATURA & GELİR  │  │ GİDER YÖNETİMİ  │         │
+│  │                 │  │                 │  │                 │         │
+│  │ Nakit takip     │  │ Faturalar       │  │ Aylık masraflar │         │
+│  │ Banka kartları  │  │ Gelirler        │  │ Yıllık masraflar│         │
+│  │ Ödeme takvimleri│  │ Tahsilat takip  │  │ Ay ay detay     │         │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
+│                                                                         │
+│  ┌─────────────────┐  ┌─────────────────┐                              │
+│  │    WHATSAPP     │  │   REFERANSLAR   │                              │
+│  │                 │  │                 │                              │
+│  │ AI cevap öner   │  │ Portfolyo       │                              │
+│  │ Hızlı gönderim  │  │ Hızlı paylaşım  │                              │
+│  └─────────────────┘  └─────────────────┘                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+Yeni Veritabanı Tabloları
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    EK VERİTABANI TABLOLARI                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│      users       │       │      tasks       │       │      leads       │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ name             │       │ title            │       │ company_name     │
+│ email            │       │ description      │       │ contact_person   │
+│ password         │       │ period_type      │       │ phone            │
+│ phone            │       │ assigned_to (FK) │       │ email            │
+│ role             │       │ created_by (FK)  │       │ source           │
+│ is_active        │       │ due_date         │       │ status           │
+│ created_at       │       │ priority         │       │ expected_value   │
+└──────────────────┘       │ status           │       │ next_contact     │
+                           │ completed_at     │       │ notes            │
+                           │ notes            │       │ created_at       │
+                           │ created_at       │       └──────────────────┘
+                           └──────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│ lead_activities  │       │  bank_accounts   │       │   bank_cards     │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ lead_id (FK)     │       │ bank_name        │       │ account_id (FK)  │
+│ activity_type    │       │ account_name     │       │ card_name        │
+│ description      │       │ iban             │       │ card_number_last4│
+│ contact_date     │       │ currency         │       │ card_type        │
+│ next_action      │       │ current_balance  │       │ expire_date      │
+│ next_action_date │       │ is_active        │       │ is_active        │
+│ created_by (FK)  │       │ created_at       │       │ created_at       │
+│ created_at       │       └──────────────────┘       └──────────────────┘
+└──────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│    invoices      │       │     incomes      │       │    expenses      │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ customer_id (FK) │       │ customer_id (FK) │       │ category         │
+│ invoice_no       │       │ invoice_id (FK)  │       │ title            │
+│ amount           │       │ amount           │       │ description      │
+│ currency         │       │ currency         │       │ amount           │
+│ issue_date       │       │ payment_method   │       │ currency         │
+│ due_date         │       │ bank_account (FK)│       │ period_type      │
+│ status           │       │ description      │       │ payment_day      │
+│ description      │       │ received_date    │       │ card_id (FK)     │
+│ pdf_url          │       │ created_at       │       │ start_date       │
+│ created_at       │       └──────────────────┘       │ end_date         │
+└──────────────────┘                                  │ is_active        │
+                                                      │ created_at       │
+                                                      └──────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐
+│ expense_payments │       │   cash_balance   │
+├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │
+│ expense_id (FK)  │       │ title            │
+│ amount           │       │ amount           │
+│ payment_date     │       │ currency         │
+│ card_id (FK)     │       │ last_updated     │
+│ bank_account (FK)│       │ notes            │
+│ payment_method   │       │ created_at       │
+│ notes            │       └──────────────────┘
+│ created_at       │
+└──────────────────┘
+
+Enum Değerleri
+python
+
+# Task
+TASK_PERIOD_TYPES = [
+    ('once', 'Tek Seferlik'),
+    ('daily', 'Günlük'),
+    ('weekly', 'Haftalık'),
+    ('monthly', 'Aylık'),
+]
+
+TASK_PRIORITY = [
+    ('low', 'Düşük'),
+    ('medium', 'Orta'),
+    ('high', 'Yüksek'),
+    ('urgent', 'Acil'),
+]
+
+TASK_STATUS = [
+    ('pending', 'Bekliyor'),
+    ('in_progress', 'Devam Ediyor'),
+    ('completed', 'Tamamlandı'),
+    ('cancelled', 'İptal'),
+]
+
+# Lead (Potansiyel Müşteri)
+LEAD_STATUS = [
+    ('new', 'Yeni'),
+    ('contacted', 'İletişime Geçildi'),
+    ('meeting_scheduled', 'Toplantı Planlandı'),
+    ('proposal_sent', 'Teklif Gönderildi'),
+    ('negotiation', 'Pazarlık'),
+    ('won', 'Kazanıldı'),
+    ('lost', 'Kaybedildi'),
+]
+
+LEAD_SOURCE = [
+    ('website', 'Website'),
+    ('whatsapp', 'WhatsApp'),
+    ('referral', 'Referans'),
+    ('social_media', 'Sosyal Medya'),
+    ('google_ads', 'Google Ads'),
+    ('cold_call', 'Soğuk Arama'),
+    ('other', 'Diğer'),
+]
+
+LEAD_ACTIVITY_TYPES = [
+    ('call', 'Telefon'),
+    ('meeting', 'Toplantı'),
+    ('email', 'Email'),
+    ('whatsapp', 'WhatsApp'),
+    ('proposal', 'Teklif'),
+    ('note', 'Not'),
+]
+
+# Expense (Gider)
+EXPENSE_PERIOD_TYPES = [
+    ('once', 'Tek Seferlik'),
+    ('monthly', 'Aylık'),
+    ('yearly', 'Yıllık'),
+]
+
+EXPENSE_CATEGORIES = [
+    ('rent', 'Kira'),
+    ('utilities', 'Faturalar'),
+    ('salary', 'Maaş'),
+    ('software', 'Yazılım/Abonelik'),
+    ('hardware', 'Donanım'),
+    ('marketing', 'Pazarlama'),
+    ('domain_hosting', 'Domain/Hosting'),
+    ('office', 'Ofis Giderleri'),
+    ('tax', 'Vergi'),
+    ('other', 'Diğer'),
+]
+
+# Invoice & Payment
+INVOICE_STATUS = [
+    ('draft', 'Taslak'),
+    ('sent', 'Gönderildi'),
+    ('paid', 'Ödendi'),
+    ('partial', 'Kısmi Ödeme'),
+    ('overdue', 'Gecikmiş'),
+    ('cancelled', 'İptal'),
+]
+
+PAYMENT_METHODS = [
+    ('cash', 'Nakit'),
+    ('bank_transfer', 'Havale/EFT'),
+    ('credit_card', 'Kredi Kartı'),
+    ('check', 'Çek'),
+]
+
+CARD_TYPES = [
+    ('debit', 'Banka Kartı'),
+    ('credit', 'Kredi Kartı'),
+    ('virtual', 'Sanal Kart'),
+]
+```
+
+## Para Yönetimi Akışı
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         PARA YÖNETİMİ PANELİ                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                        ÖZET KARTLAR                              │   │
+│  ├─────────────┬─────────────┬─────────────┬─────────────┬─────────┤   │
+│  │   NAKİT     │  BANKA 1    │  BANKA 2    │ BU AY GELİR │ BU AY   │   │
+│  │  ₺5,000     │  ₺12,500    │  ₺8,200     │  ₺25,000    │ GİDER   │   │
+│  │             │  Ziraat     │  Garanti    │             │ ₺18,500 │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┴─────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                    AYLIK ÖDEME TAKVİMİ                          │   │
+│  ├─────────────────────────────────────────────────────────────────┤   │
+│  │  1  │ Ofis Kirası          │ ₺8,000  │ Garanti ****4532 │ ✓    │   │
+│  │  5  │ Internet              │ ₺500    │ Ziraat ****1234  │ ✓    │   │
+│  │ 10  │ Adobe CC              │ $54     │ Garanti ****4532 │ ○    │   │
+│  │ 15  │ Sunucu Hosting        │ ₺1,200  │ Nakit            │ ○    │   │
+│  │ 20  │ Google Workspace      │ $12     │ Ziraat ****1234  │ ○    │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                    AYLIK GİDER DAĞILIMI                         │   │
+│  ├─────────────────────────────────────────────────────────────────┤   │
+│  │                                                                 │   │
+│  │   Kira ████████████████████████░░░░░  ₺8,000  (43%)            │   │
+│  │   Yazılım ████████░░░░░░░░░░░░░░░░░░  ₺2,500  (14%)            │   │
+│  │   Faturalar ██████░░░░░░░░░░░░░░░░░░  ₺1,800  (10%)            │   │
+│  │   Diğer ████████████░░░░░░░░░░░░░░░░  ₺6,200  (33%)            │   │
+│  │                                                                 │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+## Lead (Potansiyel Müşteri) Takip Ekranı
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      POTANSİYEL MÜŞTERİ TAKİBİ                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐       │
+│  │  YENİ   │  │İLETİŞİM │  │ TOPLANTI│  │ TEKLİF  │  │ PAZARLIK│       │
+│  │   (3)   │  │   (2)   │  │   (1)   │  │   (2)   │  │   (1)   │       │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘       │
+│       │            │            │            │            │             │
+│  ┌────▼────┐  ┌────▼────┐  ┌────▼────┐  ┌────▼────┐  ┌────▼────┐       │
+│  │ ABC Ltd │  │ XYZ AŞ  │  │ Demo Co │  │ Test AŞ │  │ Final   │       │
+│  │ ₺15,000 │  │ ₺8,000  │  │ ₺25,000 │  │ ₺12,000 │  │ ₺50,000 │       │
+│  │ Yarın   │  │ Bugün   │  │ 3 gün   │  │ 1 hafta │  │ Bugün   │       │
+│  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘       │
+│       │            │            │            │            │             │
+│  ┌────▼────┐  ┌────▼────┐       │            │            │             │
+│  │ MNO Ltd │  │ PQR Co  │       │            │            │             │
+│  │ ₺5,000  │  │ ₺20,000 │       │            │            │             │
+│  │ 2 gün   │  │ Bugün   │       │            │            │             │
+│  └─────────┘  └─────────┘       │            │            │             │
+│                                 │            │            │             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      LEAD DETAY - ABC Ltd                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  Firma: ABC Ltd                    Durum: [Yeni ▼]                     │
+│  Yetkili: Ahmet Yılmaz             Kaynak: WhatsApp                    │
+│  Telefon: 0532 xxx xx xx           Beklenen: ₺15,000                   │
+│  Email: ahmet@abc.com              Sonraki: 20 Aralık 2025             │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ AKTİVİTE GEÇMİŞİ                              [+ Yeni Aktivite] │   │
+│  ├─────────────────────────────────────────────────────────────────┤   │
+│  │ 📞 18 Ara - Telefon görüşmesi yapıldı                           │   │
+│  │    "Web sitesi yenileme hakkında bilgi aldı, fiyat istedi"      │   │
+│  │    Sonraki: Teklif hazırlanacak                                 │   │
+│  │                                                                 │   │
+│  │ 💬 17 Ara - WhatsApp'tan ilk iletişim                          │   │
+│  │    "Referans istedi, portfolyo gönderildi"                      │   │
+│  │    Sonraki: Telefon ile aranacak                                │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+## Ek API Endpointleri
+```
+/api/v1/
+│
+├── /tasks/
+│   ├── GET    /                    # Tüm görevler
+│   ├── GET    /my/                 # Bana atanan görevler
+│   ├── GET    /today/              # Bugünkü görevler
+│   ├── POST   /                    # Yeni görev
+│   ├── PUT    /:id/                # Güncelle
+│   ├── POST   /:id/complete/       # Tamamla
+│   └── POST   /:id/assign/         # Birine ata
+│
+├── /leads/
+│   ├── GET    /                    # Tüm leadler
+│   ├── GET    /pipeline/           # Kanban görünümü için
+│   ├── GET    /today-followups/    # Bugün takip edilecekler
+│   ├── POST   /                    # Yeni lead
+│   ├── PUT    /:id/                # Güncelle
+│   ├── PUT    /:id/status/         # Durum değiştir
+│   ├── POST   /:id/activity/       # Aktivite ekle
+│   └── POST   /:id/convert/        # Müşteriye çevir
+│
+├── /finance/
+│   ├── /bank-accounts/
+│   │   ├── GET    /                # Hesap listesi
+│   │   ├── POST   /                # Yeni hesap
+│   │   └── PUT    /:id/balance/    # Bakiye güncelle
+│   │
+│   ├── /cards/
+│   │   ├── GET    /                # Kart listesi
+│   │   └── POST   /                # Yeni kart
+│   │
+│   ├── /cash/
+│   │   ├── GET    /                # Nakit bakiye
+│   │   └── PUT    /                # Güncelle
+│   │
+│   ├── /invoices/
+│   │   ├── GET    /                # Fatura listesi
+│   │   ├── POST   /                # Yeni fatura
+│   │   ├── GET    /overdue/        # Vadesi geçenler
+│   │   └── POST   /:id/payment/    # Ödeme kaydet
+│   │
+│   ├── /incomes/
+│   │   ├── GET    /                # Gelir listesi
+│   │   ├── GET    /monthly/:year/:month/  # Aylık
+│   │   └── POST   /                # Yeni gelir
+│   │
+│   ├── /expenses/
+│   │   ├── GET    /                # Gider listesi
+│   │   ├── GET    /monthly/:year/:month/  # Aylık
+│   │   ├── GET    /recurring/      # Tekrarlayan giderler
+│   │   ├── GET    /calendar/       # Ödeme takvimi
+│   │   └── POST   /                # Yeni gider
+│   │
+│   └── /reports/
+│       ├── GET    /summary/        # Genel özet
+│       ├── GET    /monthly/:year/:month/  # Aylık rapor
+│       └── GET    /yearly/:year/   # Yıllık rapor
+│
+└── ...
+
+Güncellenmiş Tam Modül Listesi
+#	Modül	Açıklama
+1	Müşteri Yönetimi	Aktif müşteriler, iletişim, dökümanlar
+2	Potansiyel Müşteri (Lead)	Pipeline, aktivite takibi, hatırlatıcılar
+3	Domain & Hosting	Takip, yenileme hatırlatıcıları
+4	Güvenli Kasa	Şifreler, mail hesapları (şifreli)
+5	SEO Takip	Günlük/haftalık/aylık görevler
+6	Task Yönetimi	Ekip görevleri, atama, takip
+7	Fatura & Gelir	Faturalar, tahsilat takibi
+8	Gider Yönetimi	Aylık/yıllık masraflar, kategoriler
+9	Para Yönetimi	Nakit, banka, kart, ödeme takvimi
+10	WhatsApp	Mesajlar, AI cevap, referans gönderim
+11	Referanslar	Portfolyo, hızlı paylaşım
+12	Bildirimler	Email + WhatsApp bildirimleri
+Son Sorular
+
+    Çoklu para birimi gerekiyor mu? (TL + USD + EUR gibi)
+    Fatura oluşturma: PDF olarak fatura oluşturup müşteriye gönderme olacak mı, yoksa sadece kayıt tutma mı?
+    Dashboard: Giriş yaptığınızda ne görmek istersiniz? (Bugünkü görevler, yaklaşan ödemeler, bekleyen leadler vs.)
+    Başka eksik var mı? Tüm modüller tamam mı?
+
+Bunlar da tamamsa artık kodlamaya başlayabiliriz!
+
+şimdi aslında bu bir şirket için olacak ama birden fazla şirketimiz ve alt şirketler var
+19 Ara
+
+Anladım! Bu çok önemli bir detay. Multi-tenant (çok kiracılı) bir yapı kurmamız gerekiyor. Hiyerarşiyi anlayayım:
+Şirket Yapınız Nasıl?
+
+Örnek 1: Basit Çoklu Şirket
+┌─────────────────────────────────────────┐
+│              KULLANICI                  │
+├─────────────────────────────────────────┤
+│                                         │
+│  ┌───────────┐  ┌───────────┐          │
+│  │ Şirket A  │  │ Şirket B  │          │
+│  │ (Ajans)   │  │ (Yazılım) │          │
+│  └───────────┘  └───────────┘          │
+│                                         │
+│  Her şirketin ayrı müşterileri,        │
+│  ayrı finansı, ayrı her şeyi var       │
+└─────────────────────────────────────────┘
+
+
+Örnek 2: Holding / Alt Şirket Yapısı
+┌─────────────────────────────────────────┐
+│            HOLDİNG / ANA ŞİRKET         │
+├─────────────────────────────────────────┤
+│                                         │
+│  ┌─────────────────────────────────┐   │
+│  │         ANA ŞİRKET (A)          │   │
+│  ├─────────────────────────────────┤   │
+│  │                                 │   │
+│  │  ┌───────────┐  ┌───────────┐  │   │
+│  │  │ Alt Şir.  │  │ Alt Şir.  │  │   │
+│  │  │   (A1)    │  │   (A2)    │  │   │
+│  │  └───────────┘  └───────────┘  │   │
+│  │                                 │   │
+│  └─────────────────────────────────┘   │
+│                                         │
+│  ┌─────────────────────────────────┐   │
+│  │         ANA ŞİRKET (B)          │   │
+│  ├─────────────────────────────────┤   │
+│  │                                 │   │
+│  │  ┌───────────┐                 │   │
+│  │  │ Alt Şir.  │                 │   │
+│  │  │   (B1)    │                 │   │
+│  │  └───────────┘                 │   │
+│  │                                 │   │
+│  └─────────────────────────────────┘   │
+│                                         │
+└─────────────────────────────────────────┘
+
+Sorularım
+
+    Yapı hangisi? Düz çoklu şirket mi, yoksa ana/alt şirket hiyerarşisi mi?
+    Veri izolasyonu: Her şirketin verisi tamamen ayrı mı olacak, yoksa bazı veriler ortaklaşa mı kullanılacak? (Mesela referanslar ortak mı?)
+    Kullanıcılar: Bir kullanıcı birden fazla şirkete erişebilecek mi? Yoksa her şirkette ayrı kullanıcılar mı?
+    Finans: Şirketler arası para transferi veya konsolide rapor gerekiyor mu?
+    Geçiş: Aynı ekranda şirketler arası geçiş mi olacak? (Dropdown ile şirket seçimi gibi)
+
+Yapıyı netleştirince veritabanını ona göre tasarlayalım. Bu baştan doğru kurulmazsa sonradan değiştirmek çok zor olur.
+
+ek olarak
+
+    Güvenlik ve Yetkilendirme (Security) "Güvenli Kasa" modülü çok kritik. Excel'de şifre tutmaktan farkı olmalı.
+    Loglama (Audit Logs): Hangi personel, hangi müşterinin FTP şifresini ne zaman görüntüledi? Bu kayıt, bir güvenlik ihlali olduğunda seni yasal olarak korur.
+    Rol Bazlı Yetki (RBAC): Stajyer sadece "Task"ları görsün, "Güvenli Kasa"yı veya "Gelirleri" göremesin.
+    2FA (İki Faktörlü Doğrulama): Panele girişte mutlaka SMS veya Authenticator şartı.
+    Proje Yönetimi Derinliği (Advanced PM) "Task Yönetimi" modülünü biraz daha detaylandırmalısın.
+    Zaman Takibi (Time Tracking): Bir görevi yaparken "Başla/Durdur" butonu. (Karlılık hesabı için şart).
+    Kanban / Gantt Görünümü: Görevleri sadece liste olarak değil, Trello vari sürükle-bırak panolarla veya zaman çizelgesiyle görmek.
+
+birde firma ici dosya paylaşımı buradan yapılmalı
+19 Ara
+
+Mükemmel eklemeler! Şimdi kurumsal seviyede bir sistem oluyor. Hepsini entegre edeyim:
+Güncellenmiş Tam Mimari
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            MULTI-TENANT CRM/ERP                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │                         ORGANİZASYON KATMANI                          │ │
+│  ├───────────────────────────────────────────────────────────────────────┤ │
+│  │                                                                       │ │
+│  │   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐              │ │
+│  │   │  Şirket A   │    │  Şirket B   │    │  Şirket C   │              │ │
+│  │   │  (Ajans)    │    │  (Yazılım)  │    │  (Hosting)  │              │ │
+│  │   ├─────────────┤    ├─────────────┤    ├─────────────┤              │ │
+│  │   │ Alt Şir. A1 │    │             │    │ Alt Şir. C1 │              │ │
+│  │   │ Alt Şir. A2 │    │             │    │             │              │ │
+│  │   └─────────────┘    └─────────────┘    └─────────────┘              │ │
+│  │                                                                       │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │                        GÜVENLİK KATMANI                               │ │
+│  ├───────────────────────────────────────────────────────────────────────┤ │
+│  │  • 2FA Zorunlu Giriş (TOTP/SMS)                                      │ │
+│  │  • Rol Bazlı Yetkilendirme (RBAC)                                    │ │
+│  │  • Audit Logs (Tüm işlemler kayıt altında)                           │ │
+│  │  • AES-256 Şifreleme (Güvenli Kasa)                                  │ │
+│  │  • Session Yönetimi & IP Kısıtlama                                   │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Yeni Veritabanı Tabloları - Organizasyon & Güvenlik
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    ORGANİZASYON & GÜVENLİK TABLOLARI                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│  organizations   │       │    companies     │       │      users       │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ name             │──┐    │ organization (FK)│       │ email            │
+│ slug             │  │    │ parent_company   │───┐   │ password_hash    │
+│ logo             │  │    │ name             │   │   │ first_name       │
+│ settings (JSON)  │  │    │ slug             │   │   │ last_name        │
+│ is_active        │  │    │ tax_number       │   │   │ phone            │
+│ created_at       │  │    │ address          │   │   │ avatar           │
+└──────────────────┘  │    │ logo             │   │   │ two_fa_secret    │
+                      │    │ is_active        │   │   │ two_fa_enabled   │
+                      │    │ created_at       │   │   │ last_login       │
+                      │    └──────────────────┘   │   │ is_active        │
+                      │             ▲             │   │ created_at       │
+                      │             │             │   └──────────────────┘
+                      │             │             │            │
+                      │    ┌────────┴─────────┐   │            │
+                      │    │ (self-reference  │   │            │
+                      │    │  for alt şirket) │   │            │
+                      │    └──────────────────┘   │            │
+                      │                           │            │
+                      ▼                           ▼            ▼
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│      roles       │       │ company_members  │       │   permissions    │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ company_id (FK)  │       │ company_id (FK)  │       │ code             │
+│ name             │       │ user_id (FK)     │       │ name             │
+│ description      │       │ role_id (FK)     │       │ module           │
+│ is_system        │       │ is_owner         │       │ description      │
+│ created_at       │       │ joined_at        │       └──────────────────┘
+└──────────────────┘       └──────────────────┘
+                                                      ┌──────────────────┐
+┌──────────────────┐       ┌──────────────────┐       │ role_permissions │
+│   audit_logs     │       │  login_history   │       ├──────────────────┤
+├──────────────────┤       ├──────────────────┤       │ id               │
+│ id               │       │ id               │       │ role_id (FK)     │
+│ company_id (FK)  │       │ user_id (FK)     │       │ permission_id(FK)│
+│ user_id (FK)     │       │ ip_address       │       └──────────────────┘
+│ action           │       │ user_agent       │
+│ module           │       │ location         │
+│ record_type      │       │ status           │
+│ record_id        │       │ two_fa_method    │
+│ old_values (JSON)│       │ created_at       │
+│ new_values (JSON)│       └──────────────────┘
+│ ip_address       │
+│ user_agent       │
+│ created_at       │
+└──────────────────┘
+
+Rol ve Yetki Sistemi (RBAC)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         ROL BAZLI YETKİLENDİRME                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                        ÖRNEK ROLLER                                  │   │
+│  ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   │
+│  │   OWNER     │   ADMIN     │  MANAGER    │  EMPLOYEE   │  INTERN     │   │
+│  │  (Patron)   │  (Yönetici) │  (Müdür)    │  (Çalışan)  │  (Stajyer)  │   │
+│  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   │
+│  │ Her şey     │ Her şey     │ Kendi ekip  │ Kendi task  │ Sadece task │   │
+│  │             │ (finans -)  │ + müşteri   │ + müşteri   │ görüntüleme │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┴─────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                     YETKİ MATRİSİ ÖRNEĞİ                            │   │
+│  ├─────────────────────┬───────┬───────┬───────┬───────┬───────────────┤   │
+│  │ Modül               │ Owner │ Admin │Manager│Employee│ Intern       │   │
+│  ├─────────────────────┼───────┼───────┼───────┼───────┼───────────────┤   │
+│  │ Müşteriler          │ CRUD  │ CRUD  │ CRUD  │  RU   │     R         │   │
+│  │ Güvenli Kasa        │ CRUD  │ CRUD  │  R    │   -   │     -         │   │
+│  │ Finanslar           │ CRUD  │  R    │   -   │   -   │     -         │   │
+│  │ Tasklar             │ CRUD  │ CRUD  │ CRUD  │ CRUD  │    RU         │   │
+│  │ Dosyalar            │ CRUD  │ CRUD  │ CRUD  │ CRUD  │     R         │   │
+│  │ Raporlar            │  R    │  R    │  R    │   -   │     -         │   │
+│  │ Ayarlar             │ CRUD  │  RU   │   -   │   -   │     -         │   │
+│  │ Kullanıcı Yönetimi  │ CRUD  │ CRUD  │   -   │   -   │     -         │   │
+│  └─────────────────────┴───────┴───────┴───────┴───────┴───────────────┘   │
+│                                                                             │
+│  C = Create, R = Read, U = Update, D = Delete                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Permission Kodları
+python
+
+PERMISSIONS = {
+    # Müşteri Modülü
+    'customers.view': 'Müşterileri görüntüle',
+    'customers.create': 'Müşteri ekle',
+    'customers.edit': 'Müşteri düzenle',
+    'customers.delete': 'Müşteri sil',
+    
+    # Güvenli Kasa
+    'vault.view': 'Şifreleri görüntüle',
+    'vault.view_password': 'Şifre içeriğini göster',  # Ayrı log tutulur
+    'vault.create': 'Şifre ekle',
+    'vault.edit': 'Şifre düzenle',
+    'vault.delete': 'Şifre sil',
+    
+    # Finans
+    'finance.view': 'Finansları görüntüle',
+    'finance.manage_income': 'Gelir yönet',
+    'finance.manage_expense': 'Gider yönet',
+    'finance.manage_invoice': 'Fatura yönet',
+    'finance.view_reports': 'Raporları gör',
+    
+    # Task
+    'tasks.view_all': 'Tüm görevleri gör',
+    'tasks.view_own': 'Kendi görevlerini gör',
+    'tasks.create': 'Görev oluştur',
+    'tasks.assign': 'Görev ata',
+    'tasks.edit': 'Görev düzenle',
+    'tasks.delete': 'Görev sil',
+    
+    # Dosyalar
+    'files.view': 'Dosyaları görüntüle',
+    'files.upload': 'Dosya yükle',
+    'files.download': 'Dosya indir',
+    'files.delete': 'Dosya sil',
+    
+    # Ayarlar
+    'settings.view': 'Ayarları gör',
+    'settings.edit': 'Ayarları düzenle',
+    'users.manage': 'Kullanıcı yönet',
+    'roles.manage': 'Rol yönet',
+}
+```
+
+## Audit Log Sistemi
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            AUDIT LOG ÖRNEKLERİ                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ Tarih       │ Kullanıcı  │ İşlem            │ Detay                  │   │
+│  ├─────────────┼────────────┼──────────────────┼────────────────────────┤   │
+│  │ 19.12 14:32 │ Ahmet      │ LOGIN            │ IP: 192.168.1.5        │   │
+│  │             │            │                  │ 2FA: Authenticator     │   │
+│  ├─────────────┼────────────┼──────────────────┼────────────────────────┤   │
+│  │ 19.12 14:35 │ Ahmet      │ CREDENTIAL_VIEW  │ Müşteri: ABC Ltd       │   │
+│  │             │            │                  │ Tip: FTP Şifresi       │   │
+│  │             │            │                  │ ⚠️ Şifre görüntülendi  │   │
+│  ├─────────────┼────────────┼──────────────────┼────────────────────────┤   │
+│  │ 19.12 14:40 │ Ahmet      │ CUSTOMER_UPDATE  │ Müşteri: XYZ AŞ        │   │
+│  │             │            │                  │ Değişen: Telefon       │   │
+│  │             │            │                  │ Eski: 0532...          │   │
+│  │             │            │                  │ Yeni: 0533...          │   │
+│  ├─────────────┼────────────┼──────────────────┼────────────────────────┤   │
+│  │ 19.12 15:00 │ Mehmet     │ FILE_DOWNLOAD    │ Dosya: sozlesme.pdf    │   │
+│  │             │            │                  │ Klasör: ABC Ltd        │   │
+│  ├─────────────┼────────────┼──────────────────┼────────────────────────┤   │
+│  │ 19.12 15:10 │ Stajyer    │ ACCESS_DENIED    │ Modül: Güvenli Kasa    │   │
+│  │             │            │                  │ ⛔ Yetkisiz erişim     │   │
+│  └─────────────┴────────────┴──────────────────┴────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Proje Yönetimi - Gelişmiş
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     GELİŞMİŞ PROJE & TASK YÖNETİMİ                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│    projects      │       │      tasks       │       │   time_entries   │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ company_id (FK)  │       │ project_id (FK)  │       │ task_id (FK)     │
+│ customer_id (FK) │       │ parent_task (FK) │──┐    │ user_id (FK)     │
+│ name             │       │ title            │  │    │ started_at       │
+│ description      │       │ description      │  │    │ ended_at         │
+│ status           │       │ assigned_to (FK) │  │    │ duration_minutes │
+│ start_date       │       │ created_by (FK)  │  │    │ description      │
+│ end_date         │       │ status           │  │    │ is_billable      │
+│ budget           │       │ priority         │  │    │ created_at       │
+│ hourly_rate      │       │ due_date         │  │    └──────────────────┘
+│ is_billable      │       │ estimated_hours  │  │
+│ created_at       │       │ board_column     │  │    (Self-reference
+└──────────────────┘       │ sort_order       │  │     for subtasks)
+                           │ created_at       │  │
+                           └──────────────────┘◄─┘
+
+┌──────────────────┐       ┌──────────────────┐
+│  board_columns   │       │    task_tags     │
+├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │
+│ company_id (FK)  │       │ company_id (FK)  │
+│ name             │       │ name             │
+│ color            │       │ color            │
+│ sort_order       │       └──────────────────┘
+│ is_default       │
+└──────────────────┘       ┌──────────────────┐
+                           │ task_tag_pivot   │
+                           ├──────────────────┤
+                           │ task_id (FK)     │
+                           │ tag_id (FK)      │
+                           └──────────────────┘
+```
+
+## Kanban Board Görünümü
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Proje: ABC Ltd Website Yenileme                    [Liste] [Kanban] [Gantt]│
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │  BACKLOG    │  │  YAPILACAK  │  │  DEVAM      │  │  TAMAMLANDI │        │
+│  │     (5)     │  │     (3)     │  │    (2)      │  │     (8)     │        │
+│  ├─────────────┤  ├─────────────┤  ├─────────────┤  ├─────────────┤        │
+│  │             │  │             │  │             │  │             │        │
+│  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │        │
+│  │ │ SEO     │ │  │ │ Anasayfa│ │  │ │ Logo    │ │  │ │ Wireframe│ │        │
+│  │ │ Analizi │ │  │ │ Tasarım │ │  │ │ Tasarım │ │  │ │ Onay    │ │        │
+│  │ │         │ │  │ │         │ │  │ │         │ │  │ │         │ │        │
+│  │ │ 👤 Ayşe │ │  │ │ 👤 Mert │ │  │ │ 👤 Ayşe │ │  │ │ ✓ 2 gün │ │        │
+│  │ │ 📅 25.12│ │  │ │ 📅 22.12│ │  │ │ ⏱️ 2:30 │ │  │ └─────────┘ │        │
+│  │ └─────────┘ │  │ └─────────┘ │  │ │ [Durdur]│ │  │             │        │
+│  │             │  │             │  │ └─────────┘ │  │ ┌─────────┐ │        │
+│  │ ┌─────────┐ │  │ ┌─────────┐ │  │             │  │ │ Toplantı│ │        │
+│  │ │ İçerik  │ │  │ │ Mobil   │ │  │ ┌─────────┐ │  │ │ Notları │ │        │
+│  │ │ Yazımı  │ │  │ │ Uyum    │ │  │ │ API     │ │  │ │         │ │        │
+│  │ │         │ │  │ │         │ │  │ │ Entegre │ │  │ │ ✓ 1 gün │ │        │
+│  │ │ 👤 -    │ │  │ │ 👤 Mert │ │  │ │         │ │  │ └─────────┘ │        │
+│  │ │ 📅 -    │ │  │ │ 📅 28.12│ │  │ │ 👤 Ali  │ │  │             │        │
+│  │ └─────────┘ │  │ └─────────┘ │  │ │ ⏱️ 5:45 │ │  │     ...     │        │
+│  │             │  │             │  │ └─────────┘ │  │             │        │
+│  │    ...      │  │             │  │             │  │             │        │
+│  │             │  │             │  │             │  │             │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Time Tracking Widget
+```
+┌─────────────────────────────────────────┐
+│         ZAMAN TAKİBİ                    │
+├─────────────────────────────────────────┤
+│                                         │
+│  Aktif Görev: Logo Tasarım              │
+│  Proje: ABC Ltd Website                 │
+│                                         │
+│         ┌───────────────┐               │
+│         │    02:34:15   │               │
+│         └───────────────┘               │
+│                                         │
+│    [⏸️ Duraklat]  [⏹️ Bitir]            │
+│                                         │
+│  ─────────────────────────────────      │
+│                                         │
+│  Bugün: 5s 23dk                         │
+│  Bu Hafta: 32s 15dk                     │
+│  Bu Proje Toplam: 48s 30dk              │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+## Dosya Yönetimi
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           DOSYA YÖNETİMİ                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│     folders      │       │      files       │       │   file_shares    │
+├──────────────────┤       ├──────────────────┤       ├──────────────────┤
+│ id               │       │ id               │       │ id               │
+│ company_id (FK)  │       │ company_id (FK)  │       │ file_id (FK)     │
+│ parent_id (FK)   │──┐    │ folder_id (FK)   │       │ shared_with (FK) │
+│ name             │  │    │ name             │       │ permission       │
+│ type             │  │    │ original_name    │       │ expires_at       │
+│ customer_id (FK) │  │    │ path             │       │ created_by (FK)  │
+│ project_id (FK)  │  │    │ size             │       │ created_at       │
+│ created_by (FK)  │  │    │ mime_type        │       └──────────────────┘
+│ created_at       │  │    │ uploaded_by (FK) │
+└──────────────────┘◄─┘    │ customer_id (FK) │
+                           │ project_id (FK)  │
+                           │ is_public        │
+                           │ download_count   │
+                           │ created_at       │
+                           └──────────────────┘
+```
+
+## Dosya Yönetimi Arayüzü
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  📁 Dosyalar                                    [+ Yeni Klasör] [⬆️ Yükle]  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  📍 Şirket A > Müşteriler > ABC Ltd > Sözleşmeler                          │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ Ad                        │ Boyut   │ Yükleyen │ Tarih    │ İşlem   │   │
+│  ├───────────────────────────┼─────────┼──────────┼──────────┼─────────┤   │
+│  │ 📁 2024                   │ -       │ -        │ 01.01.24 │ •••     │   │
+│  │ 📁 2025                   │ -       │ -        │ 01.01.25 │ •••     │   │
+│  │ 📄 ana_sozlesme.pdf       │ 2.4 MB  │ Ahmet    │ 15.03.25 │ •••     │   │
+│  │ 📄 ek_protokol.pdf        │ 856 KB  │ Mehmet   │ 20.06.25 │ •••     │   │
+│  │ 🖼️ logo_final.png        │ 1.2 MB  │ Ayşe     │ 10.12.25 │ •••     │   │
+│  └───────────────────────────┴─────────┴──────────┴──────────┴─────────┘   │
+│                                                                             │
+│  Klasör Yapısı:                                                            │
+│  ├── 📁 Genel (Şirket içi dökümanlar)                                      │
+│  ├── 📁 Müşteriler                                                         │
+│  │   ├── 📁 ABC Ltd                                                        │
+│  │   │   ├── 📁 Sözleşmeler                                                │
+│  │   │   ├── 📁 Projeler                                                   │
+│  │   │   └── 📁 Faturalar                                                  │
+│  │   └── 📁 XYZ AŞ                                                         │
+│  ├── 📁 Projeler                                                           │
+│  └── 📁 Şablonlar                                                          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## 2FA Giriş Akışı
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              GİRİŞ AKIŞI                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+     ┌─────────────┐
+     │   Email &   │
+     │   Şifre     │
+     └──────┬──────┘
+            │
+            ▼
+     ┌─────────────┐         ┌─────────────┐
+     │  Doğrulama  │───Yok──▶│  2FA Setup  │
+     │  2FA Var?   │         │  (İlk giriş)│
+     └──────┬──────┘         └─────────────┘
+            │ Var
+            ▼
+     ┌─────────────┐
+     │  2FA Kodu   │
+     │   Girişi    │
+     │             │
+     │ ┌─────────┐ │
+     │ │ 1 2 3 4 │ │
+     │ │ 5 6 _ _ │ │
+     │ └─────────┘ │
+     │             │
+     │ [Authenticator]      │
+     │ [SMS Gönder]         │
+     └──────┬──────┘
+            │
+            ▼
+     ┌─────────────┐
+     │   Şirket    │
+     │   Seçimi    │
+     │             │
+     │ ○ Şirket A  │
+     │ ○ Şirket B  │
+     │ ○ Alt Şir.  │
+     └──────┬──────┘
+            │
+            ▼
+     ┌─────────────┐
+     │  Dashboard  │
+     └─────────────┘
+
+Güncellenmiş Modül Listesi
+#	Modül	Açıklama	Yeni
+1	Organizasyon	Multi-tenant, şirket/alt şirket	✅
+2	Kullanıcı & Yetki	RBAC, 2FA, roller	✅
+3	Audit Logs	Tüm işlem kayıtları	✅
+4	Müşteri Yönetimi	Aktif müşteriler	
+5	Potansiyel Müşteri	Lead pipeline	
+6	Domain & Hosting	Takip, hatırlatıcılar	
+7	Güvenli Kasa	Şifreli, loglu	
+8	SEO Takip	Periyodik görevler	
+9	Proje Yönetimi	Kanban, Gantt	✅
+10	Task & Time Track	Zaman takibi	✅
+11	Dosya Yönetimi	Klasörler, paylaşım	✅
+12	Fatura & Gelir	Tahsilat takibi	
+13	Gider Yönetimi	Aylık/yıllık	
+14	Para Yönetimi	Kasa, banka, kart	
+15	WhatsApp	AI cevap	
+16	Referanslar	Portfolyo	
+17	Bildirimler	Email + WhatsApp	
+Sorularım
+
+    Şirket yapısı: Kaç ana şirket, kaç alt şirket var yaklaşık? Hiyerarşi ne kadar derin?
+    Kullanıcı sayısı: Toplam kaç kişi kullanacak sistemi?
+    Dosya depolama: Dosyalar sunucuda mı tutulsun yoksa S3/Cloudflare R2 gibi cloud storage mı?
+    Gantt chart: Gantt görünümü şart mı yoksa Kanban yeterli mi?
+    Başka eksik var mı? Artık tüm özellikleri toparlayıp geliştirmeye başlayalım mı?
+
+ana şirket ve alt şirket hiyerarşisi var burda Group veya holding gibi, her şirketin vericisi ayrı olacak, geçiş aslında giriş erkanında olacak orada firmalar logoları ve hiyerarşik yapı ile sıralanacak ve o şekilde giriş yapılacak
+19 Ara
+
+Anladım! Holding/Grup yapısı ile güzel bir giriş deneyimi. Şöyle olacak:
+Holding/Grup Yapısı
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           ORGANİZASYON HİYERARŞİSİ                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                        ┌─────────────────────┐                              │
+│                        │    XYZ HOLDİNG      │                              │
+│                        │    (Grup/Holding)   │                              │
+│                        └──────────┬──────────┘                              │
+│                                   │                                         │
+│            ┌──────────────────────┼──────────────────────┐                  │
+│            │                      │                      │                  │
+│            ▼                      ▼                      ▼                  │
+│   ┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐          │
+│   │   DİJİTAL AŞ    │   │   YAZILIM AŞ    │   │   MEDYA LTD     │          │
+│   │   (Ana Şirket)  │   │   (Ana Şirket)  │   │   (Ana Şirket)  │          │
+│   └────────┬────────┘   └────────┬────────┘   └─────────────────┘          │
+│            │                     │                                          │
+│      ┌─────┴─────┐               │                                          │
+│      ▼           ▼               ▼                                          │
+│ ┌─────────┐ ┌─────────┐   ┌─────────────┐                                  │
+│ │ SEO     │ │ Tasarım │   │ Mobil Dev   │                                  │
+│ │ Birimi  │ │ Stüdyo  │   │ Departmanı  │                                  │
+│ │(Alt Şir)│ │(Alt Şir)│   │ (Alt Şir)   │                                  │
+│ └─────────┘ └─────────┘   └─────────────┘                                  │
+│                                                                             │
+│  Her kutunun:                                                               │
+│  • Kendi müşterileri                                                        │
+│  • Kendi finansı                                                            │
+│  • Kendi dosyaları                                                          │
+│  • Kendi kullanıcıları/yetkileri                                           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Giriş Ekranı Akışı
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                            ┌─────────────────┐                              │
+│                            │                 │                              │
+│                            │   LOGO / İSİM   │                              │
+│                            │                 │                              │
+│                            └─────────────────┘                              │
+│                                                                             │
+│                         ┌───────────────────────┐                           │
+│                         │  Email                │                           │
+│                         │  ahmet@xyz.com        │                           │
+│                         └───────────────────────┘                           │
+│                                                                             │
+│                         ┌───────────────────────┐                           │
+│                         │  Şifre                │                           │
+│                         │  ••••••••             │                           │
+│                         └───────────────────────┘                           │
+│                                                                             │
+│                         ┌───────────────────────┐                           │
+│                         │      Giriş Yap        │                           │
+│                         └───────────────────────┘                           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                                    │
+                                    │ Email & Şifre doğru
+                                    ▼
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                         ┌───────────────────────┐                           │
+│                         │   2FA Doğrulama       │                           │
+│                         └───────────────────────┘                           │
+│                                                                             │
+│                    Google Authenticator kodunuzu girin                      │
+│                                                                             │
+│                         ┌─────────────────────┐                             │
+│                         │  ○ ○ ○ ○ ○ ○        │                             │
+│                         └─────────────────────┘                             │
+│                                                                             │
+│                         ┌───────────────────────┐                           │
+│                         │       Doğrula         │                           │
+│                         └───────────────────────┘                           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                                    │
+                                    │ 2FA doğru
+                                    ▼
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                     Hoş geldin, Ahmet! 👋                                   │
+│                     Hangi şirkete giriş yapmak istiyorsun?                  │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                       │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
+│  │  │  🏢  XYZ HOLDİNG                                    [GRUP]      │ │ │
+│  │  │      Konsolide görünüm, tüm şirketlerin özeti                   │ │ │
+│  │  └─────────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
+│  │  │                                                                 │ │ │
+│  │  │  ┌──────────┐                                                   │ │ │
+│  │  │  │  LOGO    │  DİJİTAL AŞ                         [ANA ŞİRKET]  │ │ │
+│  │  │  │          │  Dijital pazarlama ve web hizmetleri              │ │ │
+│  │  │  └──────────┘                                                   │ │ │
+│  │  │                                                                 │ │ │
+│  │  │       ├── 🏷️ SEO Birimi                           [ALT ŞİRKET] │ │ │
+│  │  │       │      SEO ve içerik hizmetleri                           │ │ │
+│  │  │       │                                                         │ │ │
+│  │  │       └── 🏷️ Tasarım Stüdyo                       [ALT ŞİRKET] │ │ │
+│  │  │              Grafik ve UI/UX tasarım                            │ │ │
+│  │  │                                                                 │ │ │
+│  │  └─────────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
+│  │  │                                                                 │ │ │
+│  │  │  ┌──────────┐                                                   │ │ │
+│  │  │  │  LOGO    │  YAZILIM AŞ                         [ANA ŞİRKET]  │ │ │
+│  │  │  │          │  Yazılım geliştirme hizmetleri                    │ │ │
+│  │  │  └──────────┘                                                   │ │ │
+│  │  │                                                                 │ │ │
+│  │  │       └── 🏷️ Mobil Dev Departmanı                 [ALT ŞİRKET] │ │ │
+│  │  │              iOS ve Android uygulama geliştirme                 │ │ │
+│  │  │                                                                 │ │ │
+│  │  └─────────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
+│  │  │  ┌──────────┐                                                   │ │ │
+│  │  │  │  LOGO    │  MEDYA LTD                          [ANA ŞİRKET]  │ │ │
+│  │  │  │          │  Sosyal medya ve içerik üretimi                   │ │ │
+│  │  │  └──────────┘                                                   │ │ │
+│  │  └─────────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  💡 Son giriş: DİJİTAL AŞ (2 saat önce)                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Güncellenmiş Veritabanı Yapısı
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         ORGANİZASYON TABLOLARI                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────┐
+│      groups        │  (Holding/Grup seviyesi)
+├────────────────────┤
+│ id                 │
+│ name               │──────────────────────────┐
+│ slug               │                          │
+│ logo               │                          │
+│ settings (JSON)    │                          │
+│ is_active          │                          │
+│ created_at         │                          │
+└────────────────────┘                          │
+                                                │
+┌────────────────────┐                          │
+│    companies       │  (Ana şirketler)         │
+├────────────────────┤                          │
+│ id                 │                          │
+│ group_id (FK)      │◄─────────────────────────┘
+│ parent_id (FK)     │──┐  (Alt şirket için self-reference)
+│ company_type       │  │  (main/subsidiary)
+│ name               │  │
+│ slug               │  │
+│ tax_number         │  │
+│ tax_office         │  │
+│ address            │  │
+│ phone              │  │
+│ email              │  │
+│ logo               │  │
+│ color_primary      │  │  (Marka rengi - UI için)
+│ color_secondary    │  │
+│ settings (JSON)    │  │
+│ is_active          │  │
+│ created_at         │  │
+└────────────────────┘◄─┘
+
+┌────────────────────┐       ┌────────────────────┐
+│      users         │       │  user_companies    │  (Kullanıcı-Şirket ilişkisi)
+├────────────────────┤       ├────────────────────┤
+│ id                 │       │ id                 │
+│ email              │       │ user_id (FK)       │
+│ password_hash      │       │ company_id (FK)    │
+│ first_name         │       │ role_id (FK)       │
+│ last_name          │       │ is_owner           │
+│ phone              │       │ is_default         │  (Varsayılan şirket)
+│ avatar             │       │ last_accessed_at   │  (Son giriş zamanı)
+│ two_fa_secret      │       │ created_at         │
+│ two_fa_enabled     │       └────────────────────┘
+│ is_active          │
+│ last_login         │
+│ created_at         │
+└────────────────────┘
+
+Company Types & Enum'lar
+python
+
+COMPANY_TYPES = [
+    ('main', 'Ana Şirket'),
+    ('subsidiary', 'Alt Şirket/Departman'),
+]
+
+# Şirket ayarları JSON örneği
+COMPANY_SETTINGS = {
+    "currency": "TRY",
+    "timezone": "Europe/Istanbul",
+    "date_format": "DD.MM.YYYY",
+    "fiscal_year_start": "01-01",
+    "invoice_prefix": "DJT",
+    "invoice_next_number": 1001,
+    "modules_enabled": [
+        "customers",
+        "leads", 
+        "projects",
+        "tasks",
+        "vault",
+        "finance",
+        "files",
+        "seo",
+        "whatsapp"
+    ]
+}
+```
+
+## Şirket Geçişi (Header'da)
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ┌──────────┐                                                                │
+│ │  LOGO    │  DİJİTAL AŞ  ▼              🔔 3    👤 Ahmet Yılmaz  ▼        │
+│ └──────────┘                                                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Tıklandığında:                                                            │
+│  ┌─────────────────────────────────┐                                       │
+│  │ Şirket Değiştir                 │                                       │
+│  ├─────────────────────────────────┤                                       │
+│  │ ✓ DİJİTAL AŞ                    │  ← Şu an aktif                        │
+│  │   ├ SEO Birimi                  │                                       │
+│  │   └ Tasarım Stüdyo              │                                       │
+│  │                                 │                                       │
+│  │   YAZILIM AŞ                    │                                       │
+│  │   └ Mobil Dev                   │                                       │
+│  │                                 │                                       │
+│  │   MEDYA LTD                     │                                       │
+│  ├─────────────────────────────────┤                                       │
+│  │ 🏢 Holding Görünümü             │  ← Konsolide dashboard                │
+│  └─────────────────────────────────┘                                       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Holding (Grup) Görünümü - Konsolide Dashboard
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🏢 XYZ HOLDİNG - Konsolide Görünüm                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                      GRUP TOPLAM FİNANS                              │   │
+│  ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   │
+│  │  TOPLAM     │  TOPLAM     │  NET KAR    │  BEKLEYEN   │  TOPLAM     │   │
+│  │  GELİR      │  GİDER      │  (Bu Ay)    │  TAHSİLAT   │  MÜŞTERİ    │   │
+│  │  ₺485,000   │  ₺320,000   │  ₺165,000   │  ₺52,000    │  127         │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┴─────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                    ŞİRKET BAZLI ÖZET                                 │   │
+│  ├─────────────────────┬───────────┬───────────┬───────────┬───────────┤   │
+│  │ Şirket              │ Gelir     │ Gider     │ Net       │ Müşteri   │   │
+│  ├─────────────────────┼───────────┼───────────┼───────────┼───────────┤   │
+│  │ 🔵 DİJİTAL AŞ       │ ₺250,000  │ ₺180,000  │ ₺70,000   │ 65        │   │
+│  │   └ SEO Birimi      │ ₺45,000   │ ₺20,000   │ ₺25,000   │ 12        │   │
+│  │   └ Tasarım Stüdyo  │ ₺35,000   │ ₺15,000   │ ₺20,000   │ 8         │   │
+│  │ 🟢 YAZILIM AŞ       │ ₺120,000  │ ₺75,000   │ ₺45,000   │ 28        │   │
+│  │   └ Mobil Dev       │ ₺20,000   │ ₺15,000   │ ₺5,000    │ 6         │   │
+│  │ 🟠 MEDYA LTD        │ ₺15,000   │ ₺15,000   │ ₺0        │ 8         │   │
+│  └─────────────────────┴───────────┴───────────┴───────────┴───────────┘   │
+│                                                                             │
+│  ┌────────────────────────────────┐  ┌────────────────────────────────┐    │
+│  │  📋 BUGÜNKÜ GÖREVLER (Tümü)    │  │  ⚠️ YAKLASAN BİTİŞLER         │    │
+│  ├────────────────────────────────┤  ├────────────────────────────────┤    │
+│  │  DİJİTAL: 8 görev              │  │  abc.com - 5 gün (DİJİTAL)    │    │
+│  │  YAZILIM: 12 görev             │  │  xyz.net - 12 gün (YAZILIM)   │    │
+│  │  MEDYA: 3 görev                │  │  test.com SSL - 3 gün         │    │
+│  └────────────────────────────────┘  └────────────────────────────────┘    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Veri İzolasyonu Kuralları
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         VERİ İZOLASYONU                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Her şirketin KENDİ verileri:                                              │
+│  ✓ Müşteriler                                                               │
+│  ✓ Potansiyel müşteriler (Leads)                                           │
+│  ✓ Projeler & Görevler                                                      │
+│  ✓ Dosyalar                                                                 │
+│  ✓ Güvenli kasa (şifreler)                                                  │
+│  ✓ Domain/Hosting kayıtları                                                 │
+│  ✓ Faturalar, gelirler, giderler                                           │
+│  ✓ Banka hesapları, kartlar                                                 │
+│  ✓ SEO görevleri                                                            │
+│  ✓ Audit logs                                                               │
+│                                                                             │
+│  PAYLAŞILAN veriler:                                                        │
+│  ○ Kullanıcılar (grup genelinde, şirket bazlı yetki)                       │
+│  ○ Referanslar/Portfolyo (opsiyonel paylaşım)                              │
+│  ○ WhatsApp mesajları (tek numara kullanılıyorsa)                          │
+│                                                                             │
+│  HOLDİNG SEVİYESİ erişim:                                                   │
+│  ○ Konsolide finansal raporlar (sadece okuma)                              │
+│  ○ Şirketler arası karşılaştırma                                           │
+│  ○ Grup geneli istatistikler                                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tüm Tablolarda company_id
+python
+
+# Her tablo company_id içerecek (izolasyon için)
+
+class Customer(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    # ... diğer alanlar
+
+class Project(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    # ... diğer alanlar
+
+class Credential(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    # ... diğer alanlar
+
+# API'de otomatik filtreleme
+class CustomerViewSet(viewsets.ModelViewSet):
+    def get_queryset(self):
+        return Customer.objects.filter(
+            company_id=self.request.user.active_company_id
+        )
+
+Son Sorularım
+
+Artık sistem neredeyse tam. Son birkaç detay:
+
+    Holding görünümü: Holding seviyesinde sadece raporlama mı olacak, yoksa oradan da işlem yapılabilecek mi?
+    Şirketler arası müşteri/proje transferi gerekiyor mu? (Bir müşteriyi A şirketinden B şirketine taşıma)
+    Referanslar: Her şirketin kendi referansları mı olacak, yoksa grup genelinde ortak mı?
+    Kaç şirket/alt şirket var şu an? (Yaklaşık sayı)
+    Geliştirmeye başlayalım mı? Önce hangi modülden başlamak istersin?
+        Organizasyon & Auth (temel)
+        Müşteri yönetimi
+        Proje & Task
+        Finans
+
+tamamdır bu tarz bir sistemde Python nasıl bir karar sence
+19 Ara
+
+Çok güzel bir soru. Python/Django bu sistem için gayet uygun, ama bazı artı ve eksileri değerlendirelim:
+Python/Django Değerlendirmesi
+✅ Avantajları
+Özellik	Açıklama
+Hızlı geliştirme	Django'nun hazır yapıları ile MVP hızlı çıkar
+Admin paneli	Django Admin acil işler için hazır gelir
+ORM	Veritabanı işlemleri çok kolay
+Güvenlik	CSRF, XSS, SQL Injection korumaları hazır
+Ekosistem	DRF, Celery, Channels hepsi mature
+Topluluk	Kaynak bulmak, sorun çözmek kolay
+AI/ML entegrasyonu	WhatsApp AI için Python ideal
+⚠️ Dikkat Edilmesi Gerekenler
+Konu	Durum
+Performans	Orta ölçek için yeterli, sizin için sorun değil
+Concurrency	Celery ile çözülür
+Real-time	Django Channels veya ayrı WebSocket servisi
+Ölçekleme	Horizontal scale mümkün ama Node.js kadar kolay değil
+Alternatif Stack Karşılaştırması
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        STACK KARŞILAŞTIRMASI                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ PYTHON + DJANGO                                          ⭐ ÖNERİM   │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ ✓ Hızlı geliştirme                                                  │   │
+│  │ ✓ Sizin ölçeğiniz için fazlasıyla yeterli                          │   │
+│  │ ✓ AI entegrasyonu için en iyi seçenek                              │   │
+│  │ ✓ Celery ile arka plan işleri (bildirimler, hatırlatıcılar)        │   │
+│  │ ✓ Bulması kolay developer                                           │   │
+│  │ ✗ Real-time için ekstra setup gerekir                              │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ NODE.JS + NEST.JS                                                    │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ ✓ Tek dil (JS/TS) frontend ve backend                              │   │
+│  │ ✓ Real-time için native destek                                      │   │
+│  │ ✓ Yüksek concurrency                                                │   │
+│  │ ✗ Django kadar "batteries included" değil                          │   │
+│  │ ✗ AI kütüphaneleri Python kadar zengin değil                       │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ GO + GIN/FIBER                                                       │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ ✓ Çok hızlı, düşük kaynak tüketimi                                 │   │
+│  │ ✓ Tek binary deployment                                             │   │
+│  │ ✗ Geliştirme süresi daha uzun                                      │   │
+│  │ ✗ ORM ve hazır yapılar az                                          │   │
+│  │ ✗ Sizin ölçeğiniz için overkill                                    │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Benim Önerim: Hibrit Yaklaşım
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         ÖNERİLEN MİMARİ                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                        ┌─────────────────┐                                  │
+│                        │    FRONTEND     │                                  │
+│                        │    Next.js      │                                  │
+│                        └────────┬────────┘                                  │
+│                                 │                                           │
+│                                 ▼                                           │
+│  ┌──────────────────────────────────────────────────────────────────────┐  │
+│  │                         API GATEWAY                                   │  │
+│  │                      Django REST Framework                            │  │
+│  ├──────────────────────────────────────────────────────────────────────┤  │
+│  │                                                                       │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐ │  │
+│  │  │   Auth &    │  │   Core      │  │   Finance   │  │   Files     │ │  │
+│  │  │   RBAC      │  │   CRM       │  │   Module    │  │   Module    │ │  │
+│  │  │             │  │             │  │             │  │             │ │  │
+│  │  │  • 2FA      │  │  • Müşteri  │  │  • Fatura   │  │  • Upload   │ │  │
+│  │  │  • JWT      │  │  • Lead     │  │  • Gelir    │  │  • Storage  │ │  │
+│  │  │  • Roles    │  │  • Domain   │  │  • Gider    │  │  • Share    │ │  │
+│  │  │  • Audit    │  │  • Project  │  │  • Rapor    │  │             │ │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘ │  │
+│  │                                                                       │  │
+│  └──────────────────────────────────────────────────────────────────────┘  │
+│                                 │                                           │
+│            ┌────────────────────┼────────────────────┐                     │
+│            ▼                    ▼                    ▼                     │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐            │
+│  │    Celery       │  │   PostgreSQL    │  │     Redis       │            │
+│  │                 │  │                 │  │                 │            │
+│  │ • Bildirimler   │  │ • Ana veritabanı│  │ • Cache         │            │
+│  │ • Email gönder  │  │ • Multi-tenant  │  │ • Session       │            │
+│  │ • WhatsApp      │  │                 │  │ • Celery broker │            │
+│  │ • Hatırlatıcı   │  │                 │  │                 │            │
+│  │ • Raporlama     │  │                 │  │                 │            │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘            │
+│                                                                             │
+│                    ┌─────────────────┐                                     │
+│                    │   AI Service    │                                     │
+│                    │   (Python)      │                                     │
+│                    │                 │                                     │
+│                    │ • Claude/OpenAI │                                     │
+│                    │ • WhatsApp AI   │                                     │
+│                    │ • Öneri motoru  │                                     │
+│                    └─────────────────┘                                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Sizin Senaryonuz İçin Neden Django?
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     SİZİN İÇİN DJANGO NEDEN İDEAL                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  1. ÖLÇEK                                                                   │
+│     • 5-10 şirket, ~100-200 müşteri, ~5-20 kullanıcı                       │
+│     • Django bu ölçekte hiç zorlanmaz                                       │
+│     • Performans sorunu yaşamazsınız                                        │
+│                                                                             │
+│  2. GELİŞTİRME HIZI                                                         │
+│     • Kendi iç sisteminiz, hızlı çıkması önemli                            │
+│     • Django ile 2-3 ay içinde production ready olabilir                   │
+│     • Go ile aynı sistem 4-6 ay sürer                                      │
+│                                                                             │
+│  3. AI ENTEGRASYONU                                                         │
+│     • WhatsApp AI cevap sistemi                                             │
+│     • Python = AI/ML için en iyi ekosistem                                  │
+│     • LangChain, OpenAI, Anthropic SDK hepsi Python-first                  │
+│                                                                             │
+│  4. OFİS SUNUCUSU                                                           │
+│     • Linux Mint üzerinde kolay kurulum                                     │
+│     • Düşük kaynak tüketimi                                                 │
+│     • Systemd ile kolay yönetim                                             │
+│                                                                             │
+│  5. BAKIM                                                                   │
+│     • Okunaklı kod                                                          │
+│     • İleride başka developer eklense hızlı adapte olur                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Sonuç: Kesin Django
+
+Sizin senaryonuz için Python/Django en doğru seçim. Şu nedenlerle:
+Kriter	Değerlendirme
+Ölçek	✅ Fazlasıyla yeterli
+Geliştirme hızı	✅ En hızlı
+AI entegrasyonu	✅ En iyi
+Ofis sunucusu	✅ Uygun
+Bakım kolaylığı	✅ Kolay
+Developer bulma	✅ Kolay
+Başlayalım mı?
+
+Eğer onay verirsen şu sırayla ilerleyelim:
+
+    Proje yapısı - Django project skeleton
+    Organizasyon & Auth - Grup, şirket, kullanıcı, 2FA, RBAC
+    Core modüller - Müşteri, Domain, Vault
+    İleri modüller - Proje, Task, Finans, Dosya
+    Entegrasyonlar - WhatsApp, AI, Bildirimler
+
+Hangisinden başlamak istersin?
+
+bunun bana masrafı ne olur
+19 Ara
+
+Güzel soru! Maliyet analizini detaylı yapalım:
+Maliyet Analizi
+Senaryo 1: Ofis Sunucusu (Sizin Planınız)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    OFİS SUNUCUSU MALİYETİ                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  TEK SEFERLİK KURULUM                                                       │
+│  ├── Sunucu (mevcut PC yeterliyse)                          ₺0             │
+│  ├── Sunucu (yeni alınacaksa, mini PC önerisi)              ₺8,000-15,000  │
+│  ├── UPS (kesintisiz güç kaynağı)                           ₺2,000-4,000   │
+│  └── SSD (yedek/ekstra depolama)                            ₺1,500-3,000   │
+│                                                                             │
+│  AYLIK SABİT GİDERLER                                                       │
+│  ├── Statik IP (ISP'den)                                    ₺200-500/ay    │
+│  ├── Domain (varsa)                                         ~₺50/ay       │
+│  ├── SSL sertifikası (Let's Encrypt)                        ₺0             │
+│  ├── Elektrik (sunucu 7/24 açık)                            ~₺100-200/ay   │
+│  └── Yedekleme (cloud backup)                               ~₺100-200/ay   │
+│                                                                             │
+│  ────────────────────────────────────────────────────────────────────────   │
+│  AYLIK TOPLAM (altyapı)                                     ₺450-950/ay    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Senaryo 2: Cloud Sunucu (Alternatif)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       CLOUD SUNUCU MALİYETİ                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  AYLIK GİDERLER                                                             │
+│                                                                             │
+│  Seçenek A: Türk Sağlayıcı (Turhost, Natro, vs.)                           │
+│  ├── VPS (4 CPU, 8GB RAM, 100GB SSD)                        ₺800-1,500/ay  │
+│  ├── Yedekleme                                              dahil          │
+│  └── SSL                                                    dahil          │
+│                                                                             │
+│  Seçenek B: Hetzner (Almanya, ucuz ve güvenilir)                           │
+│  ├── VPS (4 CPU, 8GB RAM, 80GB SSD)                         €15 (~₺600/ay) │
+│  ├── Yedekleme                                              €3 (~₺120/ay)  │
+│  └── SSL                                                    ₺0             │
+│                                                                             │
+│  Seçenek C: DigitalOcean / Contabo                                         │
+│  ├── VPS                                                    $24-48/ay      │
+│                                                                             │
+│  ────────────────────────────────────────────────────────────────────────   │
+│  AYLIK TOPLAM (cloud)                                       ₺600-1,500/ay  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Servis/API Maliyetleri (Her İki Senaryo İçin)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       SERVİS & API MALİYETLERİ                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ZORUNLU                                                                    │
+│  ├── WhatsApp Business API                                                  │
+│  │   ├── Meta (resmi) - İlk 1000 mesaj/ay ücretsiz         ₺0-500/ay      │
+│  │   └── Veya Baileys (unofficial, ücretsiz)               ₺0              │
+│  │                                                                          │
+│  ├── Email gönderimi (SMTP)                                                │
+│  │   ├── Kendi mail sunucunuz                              ₺0              │
+│  │   ├── Brevo (eski Sendinblue) - 300 mail/gün ücretsiz   ₺0              │
+│  │   └── Amazon SES                                        ~₺50/ay        │
+│  │                                                                          │
+│  └── SMS (2FA için, opsiyonel)                                             │
+│      ├── Netgsm, İleti Merkezi                             ₺0.15-0.25/SMS │
+│      └── Authenticator app kullanırsan                     ₺0              │
+│                                                                             │
+│  OPSİYONEL                                                                  │
+│  ├── AI API (WhatsApp cevapları için)                                      │
+│  │   ├── Claude API                                        $3/1M token    │
+│  │   ├── OpenAI GPT-4                                      $10/1M token   │
+│  │   └── Tahmini aylık kullanım                            ₺100-500/ay    │
+│  │                                                                          │
+│  └── Cloud Storage (dosyalar için, opsiyonel)                              │
+│      ├── Cloudflare R2 (10GB ücretsiz)                     ₺0              │
+│      └── AWS S3                                            ~₺50-100/ay    │
+│                                                                             │
+│  ────────────────────────────────────────────────────────────────────────   │
+│  AYLIK TOPLAM (servisler)                                  ₺100-1,000/ay   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Geliştirme Maliyeti
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       GELİŞTİRME MALİYETİ                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Seçenek A: KENDİNİZ GELİŞTİRİN                                            │
+│  ├── Maliyet                                                ₺0             │
+│  ├── Süre                                                   3-6 ay        │
+│  └── Gerekli                                                Zaman + bilgi │
+│                                                                             │
+│  Seçenek B: FREELANCER                                                      │
+│  ├── Junior developer                                       ₺50,000-80,000 │
+│  ├── Mid-level developer                                    ₺80,000-150,000│
+│  ├── Senior developer                                       ₺150,000-250,000│
+│  └── Süre                                                   2-4 ay        │
+│                                                                             │
+│  Seçenek C: YAZILIM FİRMASI                                                │
+│  ├── Bu kapsamda proje                                      ₺200,000-400,000│
+│  └── Süre                                                   3-5 ay        │
+│                                                                             │
+│  Seçenek D: HAZIR ÇÖZÜM + ÖZELLEŞTIRME                                     │
+│  ├── ERPNext, Odoo gibi                                     ₺0-50,000      │
+│  ├── Özelleştirme                                           ₺30,000-100,000│
+│  └── Eksik                                                  WhatsApp AI,   │
+│                                                              Güvenli kasa  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Toplam Maliyet Özeti
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         TOPLAM MALİYET ÖZETİ                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ SENARYO 1: Kendiniz geliştirin + Ofis sunucusu (EN UCUZ)            │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ Tek seferlik    : ₺10,000-20,000 (donanım)                          │   │
+│  │ Aylık           : ₺500-1,500 (altyapı + servisler)                  │   │
+│  │ Yıllık toplam   : ₺16,000-38,000                                    │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ SENARYO 2: Kendiniz geliştirin + Cloud sunucu                       │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ Tek seferlik    : ₺0                                                │   │
+│  │ Aylık           : ₺1,000-2,500                                      │   │
+│  │ Yıllık toplam   : ₺12,000-30,000                                    │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ SENARYO 3: Freelancer + Cloud (ORTA)                                │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ Tek seferlik    : ₺80,000-150,000 (geliştirme)                      │   │
+│  │ Aylık           : ₺1,000-2,500                                      │   │
+│  │ Yıllık toplam   : ₺92,000-180,000 (ilk yıl)                         │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ SENARYO 4: Hazır SaaS kullanmak (KARŞILAŞTIRMA)                     │   │
+│  ├─────────────────────────────────────────────────────────────────────┤   │
+│  │ Örnek: Salesforce, Monday, Zoho CRM                                 │   │
+│  │ Aylık           : $50-200/kullanıcı × 5 kullanıcı = ₺8,000-30,000  │   │
+│  │ Yıllık toplam   : ₺96,000-360,000                                   │   │
+│  │ Eksik           : Güvenli kasa, WhatsApp AI, domain takip, vs.      │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Benim Önerim
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            ÖNERİM                                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Siz zaten dijital ajans ve yazılım hizmeti veriyorsunuz.                  │
+│  Bu sistemi KENDİNİZ geliştirmenizi öneririm.                              │
+│                                                                             │
+│  NEDEN?                                                                     │
+│  ✓ Tam istediğiniz gibi olur                                               │
+│  ✓ İleride müşterilerinize de satabilirsiniz (SaaS)                        │
+│  ✓ Ekibinizin Django/React tecrübesi artar                                 │
+│  ✓ Bağımlılık yok, istediğiniz zaman değiştirirsiniz                       │
+│  ✓ Uzun vadede en ucuz seçenek                                              │
+│                                                                             │
+│  BAŞLANGIÇ PAKETİ (minimum maliyet)                                         │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ • Hetzner VPS (CX21)                              €8/ay (~₺320)     │   │
+│  │ • Cloudflare (DNS, CDN, R2)                       ₺0                │   │
+│  │ • Let's Encrypt SSL                               ₺0                │   │
+│  │ • Brevo (email)                                   ₺0                │   │
+│  │ • Baileys (WhatsApp)                              ₺0                │   │
+│  │ • Authenticator (2FA)                             ₺0                │   │
+│  │ • Claude API (AI, düşük kullanım)                 ~₺200/ay         │   │
+│  │ ─────────────────────────────────────────────────────────────────── │   │
+│  │ TOPLAM                                            ~₺500-600/ay     │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  Bu fiyata hiçbir hazır SaaS bu kadar özelleştirilmiş sistem vermez!       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Ücretsiz Alternatifler Tablosu
+Servis	Ücretli	Ücretsiz Alternatif
+Sunucu	Cloud VPS	Ofis sunucusu
+Email	Amazon SES	Brevo, kendi SMTP
+WhatsApp	Meta API	Baileys (unofficial)
+SMS (2FA)	Netgsm	TOTP Authenticator
+Storage	AWS S3	Cloudflare R2, local
+AI	OpenAI	Ollama (local LLM)
+SSL	Paid cert	Let's Encrypt
+
+Sizin durumunuz için aylık ₺500-1,000 civarı bir maliyetle bu sistemi çalıştırabilirsiniz.
+
+Geliştirmeye başlayalım mı? İlk olarak proje yapısını ve temel auth sistemini kurabilirim.
+
+proje yapısını oluşturan .sh dosyasını verirmisin
+12:04
+
+Tabii! Tüm proje yapısını oluşturan kapsamlı bir shell script hazırlıyorum.
+
+Continue
+12:12
+<thinking> The file is getting very long. Let me continue with the rest of the script content in the next part. I need to complete this file properly. </thinking>
+
+Script çok uzun olduğu için dosyayı parçalara ayırıyorum. Devam edeyim:
+Failed to editSetup Crm Project
+
+Dosya konumu farklıydı, düzeltiyorum:
+
+plaintext
+Here are the files and directories up to 2 levels deep in /mnt/user-data/outputs, excluding hidden items and node_modules:
+0	/mnt/user-data/outputs
+
+plaintext
+Here are the files and directories up to 2 levels deep in /home/claude, excluding hidden items and node_modules:
+3.0G	/home/claude
+
+Script dosyası çok uzun olduğu için parçalara ayırarak oluşturacağım:
+
+Continue
+12:34
+
+<function_results> File too large: 35499 bytes exceeds limit of 20000 bytes. Split into multiple files using part1_, part2_ prefix pattern, use str_replace for editing, or upload as attachment. </parameter>
+
+tamamdır şimdi script dosyasını bana 2 veya 3 parçada ver
+12:35
+
+Tabii! Script'i 3 parçaya bölüyorum. Sırayla çalıştırmanız gerekecek.
+
+3 parçalık kurulum scriptleri hazır. İşte kullanım talimatları:
+Kurulum Adımları
+bash
+
+# 1. Dosyaları indirin ve çalıştırılabilir yapın
+chmod +x setup_part1.sh setup_part2.sh setup_part3.sh
+
+# 2. Sırayla çalıştırın
+./setup_part1.sh
+./setup_part2.sh
+./setup_part3.sh
+
+Script İçerikleri
+Dosya	İçerik
+setup_part1.sh	Dizin yapısı, Django settings, Core models
+setup_part2.sh	Tüm app modelleri (Organization, Accounts, Customers, Leads, Domains, Vault, Projects, Tasks, Finance, Files, Audit)
+setup_part3.sh	Frontend (Next.js), Mobile (React Native), Docker, Docs, Scripts
+Kurulum Sonrası
+bash
+
+cd crm_erp
+
+# Backend
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements/development.txt
+cp .env.example .env
+# .env dosyasını düzenleyin
+python manage.py migrate
+python manage.py createsuperuser
+
+# Frontend
+cd ../frontend
+npm install
+npm run dev
+
+# VEYA Docker ile
+cd ../docker
+docker-compose up -d
+
+Başka sorunuz var mı? Projeye eklemek istediğiniz başka özellikler veya detaylandırmak istediğiniz modüller varsa yardımcı olabilirim.
+Setup part1
+SH 
+Setup part2
+SH 
+Setup part3
+SH 
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Artifacts
+Setup part3
+SH 
+Setup part2
+SH 
+Setup part1
+SH 
